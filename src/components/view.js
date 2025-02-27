@@ -33,7 +33,9 @@ const PrintableComponent = React.forwardRef(({ id, data }, ref) => (
     </div>
     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
       <p><strong>Gross:</strong> {data.grossQuantity}</p>
+      <p><strong>Gross Time:</strong> {data.grossDateTime}</p>
       <p><strong>Tare:</strong> {data.tareQuantity}</p>
+      <p><strong>Tare:</strong> {data.tareDateTime}</p>
       <p><strong>Net:</strong> {data.netQuantity}</p>
       <p><strong>Scale Fees:</strong> {data.scaleFees}</p>
     </div>

@@ -136,7 +136,9 @@ function Console() {
                   <th>Party Name</th>
                   <th>Goods Name</th>
                   <th>Gross</th>
+                  <th>Gross Timre</th>
                   <th>Tare</th>
+                  <th>Tare time</th>
                   <th>Net</th>
                   <th>Scale Fees</th>
                   <th>Action</th>
@@ -152,7 +154,9 @@ function Console() {
                       <td>{item.partyName || 'N/A'}</td>
                       <td>{item.itemName || 'N/A'}</td>
                       <td>{item.grossQuantity || 'N/A'}</td>
+                      <td>{item.grossDateTime || 'N/A'}</td>
                       <td>{item.tareQuantity || 'N/A'}</td>
+                      <td>{item.tareDateTime || 'N/A'}</td>
                       <td>{item.netQuantity || 'N/A'}</td>
                       <td>{item.scaleFees || 'N/A'}</td>
                       <td>

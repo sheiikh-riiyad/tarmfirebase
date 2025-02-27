@@ -5,10 +5,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import { auth } from "../firebase"; // ✅ Import `auth` from firebase.js
+import { auth } from "../firebase"; 
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-function Navebar() {
+function NavbarComponent() {
   const [user, setUser] = useState(null);
 
   // Check if user is logged in
@@ -44,21 +44,21 @@ function Navebar() {
       </Container>
 
       {user ? (
-        <Button onClick={handleLogout} variant="danger" style={{ marginRight: "5px" }}>
-          Logout
-        </Button>
-      ) : (
         <>
-          <Button as={Link} to="/login" style={{ marginRight: "5px" }} variant="primary">
-            Login
-          </Button>
           <Button as={Link} to="/regester" style={{ marginRight: "5px" }} variant="success">
             Register
           </Button>
+          <Button onClick={handleLogout} variant="danger" style={{ marginRight: "5px" }}>
+            Logout
+          </Button>
         </>
+      ) : (
+        <Button as={Link} to="/login" style={{ marginRight: "5px" }} variant="primary">
+          Login
+        </Button>
       )}
     </Navbar>
   );
 }
 
-export default Navebar;
+export default NavbarComponent;

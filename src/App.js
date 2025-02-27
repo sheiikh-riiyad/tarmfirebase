@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import Navebar from "./components/Navebar";
 import Login from "./components/Login";
 import Regester from "./components/regester";
-
+import View from "./components/view";
 function App() {
   return (
     <Router>
@@ -20,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/regester" element={<Regester />} />
+        <Route path="/view/:id" element={<View />} />
       </Routes>
     </Router>
   );

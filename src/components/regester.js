@@ -6,6 +6,7 @@ import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWith
 import { app } from "../firebase";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // Firebase Authentication
 const auth = getAuth(app);
@@ -13,11 +14,12 @@ const googleProvider = new GoogleAuthProvider();
 
 function Register() {
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize navigate
 
   // Form Validation Schema
   const validationSchema = Yup.object({
     firstname: Yup.string().required("First name is required"),
-    lastname: Yup.string().required("Last name is required"),
+    lastname: Yup.string(),
     email: Yup.string().email("Invalid email format").required("Email is required"),
     phone: Yup.string()
       .matches(/^[0-9]+$/, "Phone number must be only digits")
@@ -29,7 +31,6 @@ function Register() {
       .required("Please confirm your password"),
   });
 
-  // Formik for handling form state
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -43,7 +44,8 @@ function Register() {
     onSubmit: async (values) => {
       try {
         await createUserWithEmailAndPassword(auth, values.email, values.password);
-        setError(""); // Clear any previous errors
+        setError(""); 
+        navigate("/"); // Redirect to login page after successful registration
       } catch (err) {
         handleFirebaseError(err.code);
       }
@@ -55,6 +57,7 @@ function Register() {
     try {
       await signInWithPopup(auth, googleProvider);
       setError("");
+      navigate("/"); // Redirect to home page after successful Google signup
     } catch (err) {
       handleFirebaseError(err.code);
     }
@@ -165,7 +168,7 @@ function Register() {
           Register
         </Button>
         <span> or </span>
-        <a href="/Login">Login</a> <br />
+        <a href="/login">Login</a> <br />
         <span style={{ marginLeft: "150px" }}>or login with other options</span>
       </Form>
 

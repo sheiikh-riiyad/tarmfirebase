@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Container, Row, Col } from "react-bootstrap";
-import { auth } from "../firebase"; // ✅ Import from firebase.js
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 // Google Provider
 const googleProvider = new GoogleAuthProvider();
 
 function Login() {
   const [error, setError] = useState("");
+  const navigate = useNavigate(); // Initialize navigate
 
   // Form Validation Schema
   const validationSchema = Yup.object({
@@ -30,6 +32,7 @@ function Login() {
       try {
         await signInWithEmailAndPassword(auth, values.email, values.password);
         setError(""); // Clear any previous errors
+        navigate("/"); // Redirect to home page after successful login
       } catch (err) {
         handleFirebaseError(err.code);
       }
@@ -41,6 +44,7 @@ function Login() {
     try {
       await signInWithPopup(auth, googleProvider);
       setError("");
+      navigate("/"); // Redirect to home page after successful Google login
     } catch (err) {
       handleFirebaseError(err.code);
     }
@@ -98,14 +102,14 @@ function Login() {
           Login
         </Button>
         <span> or </span>
-        <a href="/Regester">Register</a> <br />
+        <a disabled href="/">Register</a> <br />
         <span style={{ marginLeft: "150px" }}>or login with</span>
       </Form>
 
       <Container>
         <Row className="justify-content-center">
           <Col xs="auto">
-            <Button onClick={signinWithGoogle} variant="outline-warning">
+            <Button  onClick={signinWithGoogle} variant="outline-warning">
               GOOGLE
             </Button>
           </Col>

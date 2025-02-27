@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Stack form elements vertically */
+  .form-group {
+    width: 100% !important;
+    margin: 5px 0 !important;
+  }
+
+  /* Adjust the table for mobile responsiveness */
+  .table {
+    width: 100% !important;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Ensure buttons don't stretch too wide on mobile */
+  .btn {
+    width: auto !important;
+  }
+
+  /* Adjust the card styles */
+  .card-body h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Make buttons stack vertically on small screens */
+  .form-group, .btn {
+    width: 100% !important;
+  }
+}

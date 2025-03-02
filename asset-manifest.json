@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.6d68f88b.css",
-    "main.js": "/static/js/main.21eac799.js",
-    "static/js/977.8260cc19.chunk.js": "/static/js/977.8260cc19.chunk.js",
-    "static/js/732.37224e20.chunk.js": "/static/js/732.37224e20.chunk.js",
-    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
-    "index.html": "/index.html",
-    "main.6d68f88b.css.map": "/static/css/main.6d68f88b.css.map",
-    "main.21eac799.js.map": "/static/js/main.21eac799.js.map",
-    "732.37224e20.chunk.js.map": "/static/js/732.37224e20.chunk.js.map",
-    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/tarmfirebase/static/css/main.6d68f88b.css",
+    "main.js": "/tarmfirebase/static/js/main.ab7ca237.js",
+    "static/js/977.8260cc19.chunk.js": "/tarmfirebase/static/js/977.8260cc19.chunk.js",
+    "static/js/732.37224e20.chunk.js": "/tarmfirebase/static/js/732.37224e20.chunk.js",
+    "static/js/453.ed3810f9.chunk.js": "/tarmfirebase/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/tarmfirebase/index.html",
+    "main.6d68f88b.css.map": "/tarmfirebase/static/css/main.6d68f88b.css.map",
+    "main.ab7ca237.js.map": "/tarmfirebase/static/js/main.ab7ca237.js.map",
+    "732.37224e20.chunk.js.map": "/tarmfirebase/static/js/732.37224e20.chunk.js.map",
+    "453.ed3810f9.chunk.js.map": "/tarmfirebase/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6d68f88b.css",
-    "static/js/main.21eac799.js"
+    "static/js/main.ab7ca237.js"
   ]
 }
